@@ -180,6 +180,11 @@ class Manga:
         return self._attr.get("status").capitalize()
 
     @property
+    def year(self):
+        """:class:`int`: Initial publication year of the manga"""
+        return self._attr.get("year")
+
+    @property
     def content_rating(self):
         """:class:`ContentRating`: Return content rating of the manga"""
         return ContentRating(self._attr.get("contentRating"))

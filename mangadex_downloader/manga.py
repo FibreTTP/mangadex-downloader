@@ -355,10 +355,11 @@ class MangaInfo:
 
     def write_to_csv(self):
         existing_data = []
-        fieldnames = ["title", "authors", "artists", "description", "tags"]
+        fieldnames = ["title", "year", "authors", "artists", "description", "tags"]
 
         data = {
             "title": self.manga.title,
+            "year": self.manga.year,
             "authors": comma_separated_text(self.manga.authors, use_bracket=False),
             "artists": comma_separated_text(self.manga.artists, use_bracket=False),
             "description": self.manga.description.replace("\n", "\\n").replace(
@@ -398,6 +399,7 @@ class MangaInfo:
 
         data = {
             "title": self.manga.title,
+            "year": self.manga.year,
             "authors": self.manga.authors,
             "artists": self.manga.artists,
             "description": self.manga.description,

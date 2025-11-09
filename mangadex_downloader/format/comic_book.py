@@ -46,6 +46,10 @@ def generate_Comicinfo(manga, total_pages, chapter=None, volume=None):
     xml_series = ET.SubElement(xml_root, "Series")
     xml_series.text = manga.title
 
+    # Publication year
+    xml_year = ET.SubElement(xml_root, "Year")
+    xml_year.text = str(manga.year)
+
     # Authors
     if len(manga.authors) > 0:
         author_str = ""
